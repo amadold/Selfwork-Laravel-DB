@@ -32,6 +32,10 @@ form {
     font-weight: bolder;
 }
 
+.alert {
+    color: red;
+}
+
 footer {
     position: sticky;
     top: 100%;

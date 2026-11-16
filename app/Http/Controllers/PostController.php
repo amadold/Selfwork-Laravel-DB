@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -12,12 +13,13 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function published(Request $request)
+    public function published(PostRequest $request)
     {
         Post::create([
             'title' => $request->title,
             'author' => $request->author,
-            'content' => $request->content
+            'content' => $request->content,
+            'img' => $request->file('img') ? $request->file('img')->store('images', 'public') : '/media/mountain.jpg'
         ]);
 
         return redirect(route('confirmation'));

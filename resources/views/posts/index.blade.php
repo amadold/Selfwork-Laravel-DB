@@ -1,9 +1,10 @@
 <x-layout>
     <h1 class="text-center my-5">All Posts</h1>
-    <div class="d-flex align-items-center justify-content-evenly m-5">
+    <div class="d-flex align-items-center justify-content-evenly flex-wrap my-5">
         @foreach ($posts as $post)
-            <div class="card" style="width: 18rem;">
+            <div class="card my-5" style="width: 18rem;">
                 <div class="card-body">
+                    <img src="{{ Storage::url($post->img) }}" class="card-img" alt="...">
                     <h5 class="text-decoration-underline">Title</h5>
                     <p class="card-text fg-2">{{ $post->title }}</p>
                     <h5 class="text-decoration-underline">Author</h5>

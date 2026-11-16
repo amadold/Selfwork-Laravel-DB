@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <img class="custom-img rounded my-5" src="/media/mountain.jpg" alt="">
+        <img class="custom-img rounded my-5" src="/storage/media/mountain.jpg" alt="">
         <div class="d-flex align-items-center justify-content-center custom-card">
             <div class="card card-translucent" style="width: 18rem;">
                 <div class="card-body">
