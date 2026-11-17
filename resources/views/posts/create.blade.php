@@ -6,22 +6,22 @@
 
             <label for="title" class="form-label my-2">Title</label>
             <input type="text" class="form-control my-2 @error('title') is-invalid @enderror" id="title"
-                name="title" placeholder="Title">
+                name="title" placeholder="Title" value="{{ old('title') }}">
             @error('title')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
             <label for="author" class="form-label my-2">Author Name</label>
             <input type="text" class="form-control my-2 @error('author') is-invalid @enderror" id="author"
-                name="author" placeholder="Author Name">
+                name="author" placeholder="Author Name" value="{{ old('author') }}">
             @error('author')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
             <div class="form-field">
                 <label for="exampleFormControlInput1" class="form-label my-2">Email address</label>
-                <input type="email" class="form-control my-2" id="exampleFormControlInput1"
-                    placeholder="name@example.com">
+                <input type="email" name="email" class="form-control my-2" id="exampleFormControlInput1"
+                    placeholder="name@example.com" value="{{ old('email') }}">
                 <div class="form-text">
                     We’ll never share your email with anyone else.
                 </div>
@@ -34,17 +34,17 @@
 
             <div class="form-field">
                 <label for="content" class="form-label my-2">Content</label>
-                <textarea class="form-control my-2 @error('content') is-invalid @enderror" id="content" name="content" rows="4"></textarea>
+                <textarea class="form-control my-2 @error('content') is-invalid @enderror" id="content" name="content" rows="4">{{ old('content') }}</textarea>
             </div>
             @error('content')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
             <div class="form-field">
-                <input type="checkbox" id="fieldValidateCheck" class="check mt-2">
+                <input type="checkbox" id="checkbox" name="checkbox" class="check mt-2">
                 <div class="form-field-content">
-                    <label for="fieldValidateCheck" name="checkbox"
-                        class="@error('checkbox') is-invalid @enderror">Agree to terms and conditions</label>
+                    <label for="checkbox" class="@error('checkbox') is-invalid @enderror">Agree to terms and
+                        conditions</label>
                 </div>
                 @error('checkbox')
                     <div class="alert alert-danger">{{ $message }}</div>
